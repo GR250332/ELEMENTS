@@ -1,5 +1,5 @@
 function strain = BAR2_DE(ex,ey,ed)
-% function strain = BAR2_DE(ex,ey,ed)
+% function strain = BAR2_DE(ex,ey,ed)  
 %--------------------------------------------------------------------------
 % PURPOSE
 %    Computation of the strain from a displacement vector ed for a BARRE
