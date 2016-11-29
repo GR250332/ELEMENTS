@@ -202,13 +202,7 @@ else
         
         indx=[ 3*i-2; 3*i-1; 3*i ];
         
-        detJ=det(JT(indx,:));
-        
-        if detJ<10*eps
-            
-            error('Jacobian determinant equal or less than zero')
-            
-        end
+        detJ=abs(det(JT(indx,:)));
         
         dNx=JT(indx,:)\dNr(indx,:);
         
