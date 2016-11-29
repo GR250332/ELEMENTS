@@ -36,15 +36,14 @@ switch type_module
         D = ghooke(ma);
         
     case 'SECANT'
-        
+              
         % Looking for the fields
         field = varargin{1};
 
-        % Computation of the elastic stiffness
-        D = ghooke(ma);
         
-        % Computation of the secant modulus
-        D = (1 - field.varf(:,1)) * D;
+        D = ghooke_secant(ma,field);
+        
+        D = cell2mat(D);
         
     case 'TANGENT'
         
@@ -72,7 +71,7 @@ C = [ 1  ex(1) ey(1)   0     0       0
     1  ex(3) ey(3)   0     0       0
     0    0     0     1   ex(3)   ey(3)];
 
-A = 1/2*det([ones(3,1) ex' ey']);
+A = 1/2*abs(det([ones(3,1) ex' ey']));
 
 %% Switch selon le mode de calcul
 switch options.mode
